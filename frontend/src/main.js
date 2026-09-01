@@ -18,7 +18,7 @@ let scene = null;
 
 function applyTheme(theme) {
   root.setAttribute('data-theme', theme);
-  icon.innerHTML = theme === 'dark' ? SUN_PATH : MOON_PATH;
+  icon.innerHTML = theme === 'dark' ? MOON_PATH : SUN_PATH;
   try {
     localStorage.setItem('tj-theme', theme);
   } catch (e) {
@@ -34,13 +34,16 @@ function initTheme() {
   } catch (e) {
     saved = null;
   }
-  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+  // Site defaults to light mode regardless of the visitor's OS preference.
+  // A returning visitor's explicit toggle choice is still remembered.
+  applyTheme(saved === 'dark' || saved === 'light' ? saved : 'light');
 
-  toggleBtn.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  }
 }
 
 // ---------- Reveal on scroll ----------

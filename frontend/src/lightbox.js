@@ -1,8 +1,9 @@
-// Click any carousel image to view it enlarged; click the backdrop, the
-// close button, or press Escape to dismiss.
+// Click any carousel image or collage photo to view it enlarged; click the
+// backdrop, the close button, or press Escape to dismiss.
 (() => {
   let dragStart = null;
   const THRESHOLD = 6; // px — distinguishes a tap from a carousel drag
+  const TARGET_SELECTOR = '.mini-carousel .carousel-slide img, .collage figure:not(.placeholder) img';
 
   function ensureOverlay(){
     let overlay = document.getElementById('lightboxOverlay');
@@ -48,7 +49,7 @@
   // Track movement between pointerdown/pointerup so a carousel drag
   // never accidentally opens the lightbox — only a genuine tap does.
   document.addEventListener('pointerdown', (e) => {
-    const img = e.target.closest('.mini-carousel .carousel-slide img');
+    const img = e.target.closest(TARGET_SELECTOR);
     if (!img) return;
     dragStart = { x: e.clientX, y: e.clientY, img };
   });
