@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/lightbox-6tm4lYNy.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/lightbox-SCIyrxGX.css">
+  <script type="module" crossorigin src="/assets/lightbox-BCdIva7Y.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/lightbox-BYltYSb5.css">
 </head>
 <body>
 
@@ -27,9 +27,14 @@
       <a href="/about.html">About</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg>
-    </button>
+    <div class="nav-actions">
+      <a class="icon-link" href="https://github.com/Takreem-Jaffery" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text)"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -44,7 +49,7 @@
       <div class="quickfacts reveal">
         <div class="qf"><span class="qf-k">Based in</span><span class="qf-v">San Ramon, CA</span></div>
         <div class="qf"><span class="qf-k">Focus</span><span class="qf-v">AI Applications · Full-Stack &amp; Mobile Engineering</span></div>
-        <div class="qf"><span class="qf-k">Graduating</span><span class="qf-v">B.S. Software Engineering · June 2026</span></div>
+        <div class="qf"><span class="qf-k">Graduated</span><span class="qf-v">B.S. Software Engineering · June 2026</span></div>
       </div>
 
       <div class="hero-cta">
@@ -71,17 +76,36 @@
             <span class="tl-role">Software Development Intern</span>
             <span class="tl-time">June 2025 – Aug 2025</span>
           </div>
-          <ul class="tl-list">
-            <li>Led a team of six interns to build an AI-powered multilingual meeting assistant that automated transcription, translation, and meeting-minute generation, cutting documentation time by 85%.</li>
-            <li>Built an accessibility-first video conferencing platform with live speech transcription, translation, and AI voice synthesis, reaching sub-2s end-to-end AI latency for seamless multilingual communication.</li>
-            <li>Engineered a scalable real-time architecture using React, Node.js, Express, WebRTC, Socket.IO, Whisper AI, and Coqui TTS, supporting 95%+ transcription accuracy with modular AI services.</li>
-            <li>Won "Most Technically Sound Project" and "Best Presentation" among interns.</li>
-          </ul>
-          <div class="tl-tags">
-            <span class="stat-badge">6 interns led</span>
-            <span class="stat-badge">85% faster docs</span>
-            <span class="tag-pill">React</span><span class="tag-pill">Node.js</span>
-            <span class="tag-pill">WebRTC</span><span class="tag-pill">Socket.IO</span>
+
+          <div class="contrib-split">
+            <div class="proj-card reveal">
+              <span class="contrib-label">Team project — Inspeech</span>
+              <ul class="tl-list">
+                <li>Led a 6-person team; coordinated planning meetings and drove the system's architecture and technical direction.</li>
+                <li>Built the initial Whisper-based transcription pipeline, plus the meeting-upload feature and its UI.</li>
+                <li>Validated the pipeline against a real Microsoft Teams meeting recording to benchmark transcription accuracy.</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="stat-badge">6 interns led</span>
+                <span class="stat-badge">85% faster docs</span>
+                <span class="tag-pill">Whisper</span><span class="tag-pill">Architecture &amp; planning</span>
+              </div>
+            </div>
+
+            <div class="proj-card reveal">
+              <span class="contrib-label">Solo build — Nexus</span>
+              <ul class="tl-list">
+                <li>Independently designed and built an accessibility-first video conferencing app — UI, architecture, and implementation, start to finish.</li>
+                <li>Integrated Whisper and Coqui TTS over WebRTC and Socket.IO for live multilingual transcription, translation, and voice synthesis.</li>
+                <li>Deployed on Render, tested the full application solo, wrote the documentation, and presented it to a review panel.</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="stat-badge">sub-2s AI latency</span>
+                <span class="stat-badge">95%+ transcription accuracy</span>
+                <span class="tag-pill">WebRTC</span><span class="tag-pill">Socket.IO</span><span class="tag-pill">Render</span>
+              </div>
+              <div class="role-note" style="margin-top:12px; border-left-color:var(--accent);"><strong>🏆 Most Technically Sound Project &amp; Best Presentation</strong> — awarded for Nexus.</div>
+            </div>
           </div>
 
           <!-- ▼ carousel — optional, delete this whole div for entries with no images -->
@@ -134,17 +158,18 @@
           <div class="proj-sub">Intermediary chatbot for rural outreach</div>
           <span class="proj-time">Aug 2025 – June 2026</span>
           <div class="proj-badges"><span class="stat-badge">770K+ clients reached</span></div>
-          <p>Developed an AI-powered conversational assistant in collaboration
-            with Kashf Foundation to enhance financial outreach for more than 770,000
-            clients across Pakistan through multilingual, voice-based interactions.
-            Built a real-time AI pipeline using Whisper, LLaMA 3, Gemma, Qwen 2.5,
-            and RAG, developed the MERN web platform and cross-platform mobile application
-            with React Native and Java with secure authentication and RESTful APIs, deployed the
-            backend infrastructure, and authored comprehensive technical documentation.</p>
+          <p>Built with Kashf Foundation to extend financial outreach to more than 770,000
+            clients across Pakistan through a multilingual, voice-based AI assistant —
+            speech in, speech out, grounded in Kashf's own knowledge base via RAG rather
+            than a generic model's guesses.</p>
+
+          <div class="role-note"><strong>My contribution:</strong> built the mobile app end-to-end — from early Whisper/LLaMA prototyping through full pipeline integration — and designed and animated the app's 2D avatar, including a custom viseme-alignment system for lip-synced speech. I also owned QA, technical documentation, and stakeholder presentations at Kashf's headquarters, including a pre-project field visit to a rural branch to see the deployment environment firsthand.</div>
+
           <div class="proj-tags">
-            <span class="tag-pill">LLaMA 3</span><span class="tag-pill">RAG</span>
+            <span class="tag-pill">RAG</span><span class="tag-pill">Ollama (Gemma / Qwen)</span>
             <span class="tag-pill">React Native</span><span class="tag-pill">MERN</span>
           </div>
+
           <!-- ▼ carousel — optional -->
           <div class="mini-carousel" data-carousel>
             <div class="carousel-track">
@@ -153,6 +178,7 @@
                 <div class="carousel-slide"><img src="/assets/RAAI2-Cro9IaH-.jpeg" alt="RAAI team" loading="lazy"></div>
                 <div class="carousel-slide"><img src="/assets/RAAI3-Ca53bK_d.jpeg" alt="RAAI poster" loading="lazy"></div>
                 <div class="carousel-slide"><img src="/assets/RAAI4-DiaAk_DS.jpeg" alt="RAAI mobile interface in Urdu" loading="lazy"></div>
+                <div class="carousel-slide"><img src="/assets/RAAI-architecture-BxaydZFc.PNG" alt="RAAI architecture diagram" loading="lazy"></div>
               </div>
             </div>
           </div>
@@ -174,6 +200,9 @@
             combining TF-IDF, Random Forest, DistilBERT, and rule-based reasoning with explainable
             risk assessment, achieving 97.9% accuracy and 100% precision while reducing false positives
             through contextual risk scoring.</p>
+
+          <div class="role-note"><strong>My role:</strong> designed and implemented the hybrid detection pipeline — architecture and code — and its evaluation metrics; reviewed roughly half of the surveyed literature; and co-authored the research paper. Before starting, I helped run a survey studying how different age groups experience spam and misinformation on WhatsApp, which shaped the detection approach.</div>
+
           <div class="proj-tags">
             <span class="tag-pill">Random Forest</span><span class="tag-pill">DistilBERT</span><span class="tag-pill">TF-IDF</span>
           </div>
@@ -194,31 +223,19 @@
           <!-- ▲ end carousel -->
         </div>
 
-        <div class="proj-card reveal">
-          <div class="proj-index">03 / Applied AI Course</div>
-          <h3>Mallama</h3>
-          <div class="proj-sub">Malware Detection using LLaMA</div>
-          <p>Fine-tuned Meta's LLaMA model on a malicious code dataset using
-            Hugging Face Transformers and Google Colab, building an end-to-end
-            workflow for preprocessing, evaluation, and malware classification.</p>
-          <div class="proj-tags">
-            <span class="tag-pill">LLaMA</span><span class="tag-pill">Hugging Face</span><span class="tag-pill">Google Colab</span>
-          </div>
-        </div>
+      </div>
 
-        <div class="proj-card reveal">
-          <div class="proj-index">04 / Software Design &amp; Architecture</div>
-          <h3>Affix</h3>
-          <div class="proj-sub">Social chatting application</div>
-          <p>A social networking and messaging application built with
-            Android Studio, Java, and Firestore featuring real-time messaging,
-            media sharing, profile customization,
-            AI-powered recommendations, and an administrative analytics dashboard.</p>
-          <div class="proj-tags">
-            <span class="tag-pill">Java</span><span class="tag-pill">Android Studio</span><span class="tag-pill">Firestore</span>
-          </div>
+      <div class="other-projects reveal">
+        <div class="other-proj">
+          <h4>Mallama</h4>
+          <span class="op-desc">Fine-tuned Meta's LLaMA model on a malicious code dataset using Hugging Face Transformers and Google Colab, building an end-to-end workflow for preprocessing, evaluation, and malware classification.</span>
+          <div class="op-tags"><span class="tag-pill">LLaMA</span><span class="tag-pill">Hugging Face</span></div>
         </div>
-
+        <div class="other-proj">
+          <h4>Affix</h4>
+          <span class="op-desc">A social networking and messaging application built with Android Studio, Java, and Firestore featuring real-time messaging, media sharing, profile customization, AI-powered recommendations, and an administrative analytics dashboard.</span>
+          <div class="op-tags"><span class="tag-pill">Java</span><span class="tag-pill">Firestore</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -349,7 +366,7 @@
             <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z" stroke-width="1.5"/></svg>
             +1 408 690 8434
           </a>
-          <a class="clink" href="https://www.linkedin.com/in/takreem-jaffery-5b0130252" target="_blank" rel="noopener">
+          <a class="clink" href="https://www.linkedin.com/in/takreem-jaffery" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4" stroke-width="1.5"/></svg>
             LinkedIn
           </a>
