@@ -1,26 +1,121 @@
 /* Additions on top of style.css. Selectors are slightly more specific than
    the originals on purpose so they win regardless of stylesheet order. */
 
+/* ---------- Two fonts only: Fraunces (headings) + Inter (everything else) ----------
+   The old monospace font is mapped to Inter, so labels, nav, tags, dates, etc.
+   now use Inter. Hierarchy comes from size, weight, letter-spacing and color. */
+html:root{ --font-mono:'Inter', sans-serif; }
+
+/* Logo: serif "TJ" to echo the favicon, Inter for the "/ engineer" tag */
+header .logo{ font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:0; }
+header .logo .logo-sub{ font-family:var(--font-body); font-weight:450; font-size:14.5px; }
+
+/* Small labels: Inter has no true small-caps, so use spaced uppercase instead */
+html body .eyebrow,
+html body .section-head .tag,
+html body .contrib-label,
+html body .eng-note .en-label,
+html body .edu-card .school{
+  font-variant:normal; text-transform:uppercase; letter-spacing:.08em; font-weight:600;
+}
+html body .eyebrow,
+html body .section-head .tag,
+html body .contrib-label{ font-size:14px; }
+html body .navlinks a{ font-weight:500; letter-spacing:.01em; }
+html body .tl-role,
+html body .proj-sub{ font-weight:500; }
+
+/* ---------- Light mode: replace navy accent with near-black ---------- */
+html[data-theme="light"]:root{ --accent-2:#2A2823; }
+
 /* ---------- Logo: "TJ / engineer" collapses to "TJ" on narrower widths ---------- */
 header .logo{ white-space:nowrap; flex-shrink:0; }
 
-@media (max-width:900px){
+@media (max-width:600px){
   header .logo .logo-sub{ display:none; }
-  header nav .navlinks{ gap:18px; }
 }
 
-/* ---------- Project link buttons ---------- */
-.proj-card .proj-links{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:16px; }
+/* ---------- Nav: collapses into a menu button when space runs out ---------- */
+header .nav-toggle{
+  display:none;
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--line-strong); background:var(--surface);
+  align-items:center; justify-content:center; cursor:pointer; padding:0;
+  transition:border-color .3s ease;
+}
+header .nav-toggle:hover{ border-color:var(--accent); }
+header .nav-toggle svg{ width:18px; height:18px; stroke:var(--text); fill:none; stroke-width:1.8; stroke-linecap:round; }
+header .nav-toggle .x-icon{ display:none; }
+header.nav-open .nav-toggle .bars-icon{ display:none; }
+header.nav-open .nav-toggle .x-icon{ display:block; }
+
+@media (max-width:1040px){
+  header .nav-toggle{ display:flex; }
+  html body header nav .navlinks{
+    display:none;
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:flex-start; gap:0;
+    padding:10px 32px 18px;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 18px 30px rgba(0,0,0,.08);
+  }
+  html body header.nav-open nav .navlinks{ display:flex; }
+  html body header nav .navlinks a{ font-size:16px; padding:12px 0; width:100%; }
+  html body header nav .navlinks a::after{ bottom:6px; width:0; }
+  html body header nav .navlinks a:hover::after,
+  html body header nav .navlinks a.is-active::after{ width:44px; }
+  header nav .navlinks .nav-sep{ display:none; }
+}
+@media (max-width:640px){
+  html body header nav .navlinks{ padding:10px 20px 18px; }
+}
+
+/* ---------- Minimum text size: nothing on the site below 13px ---------- */
+html body .navlinks a{ font-size:14.5px; }
+html body .eyebrow{ font-size:14px; }
+html body .qf-k{ font-size:13.5px; }
+/* Hero caption: kept exactly as the original (IBM Plex Mono, small) */
+html body .hero-visual .hv-caption{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.06em; }
+html body .section-head .tag{ font-size:14px; }
+html body .tl-role{ font-size:14.5px; }
+html body .tl-time{ font-size:14px; }
+html body .tag-pill,
+html body .stat-badge{ font-size:14px; }
+html body .proj-index,
+html body .proj-sub,
+html body .proj-time{ font-size:14px; }
+html body .contrib-label{ font-size:14px; }
+html body .eng-note .en-label{ font-size:13.5px; }
+html body .skill-col h4{ font-size:14.5px; }
+html body .edu-card .school{ font-size:14.5px; }
+html body .edu-card .period,
+html body .edu-honor{ font-size:14px; }
+html body .gpa-badge .lbl{ font-size:13.5px; }
+html body .btn,
+html body .clink{ font-size:14.5px; }
+html body footer{ font-size:14px; }
+html body .fact-tile .fact-mark{ font-size:13.5px; }
+html body .collage figcaption,
+html body .collage figure.placeholder .ph-label{ font-size:13px; }
+html body .edit-note{ font-size:14px; }
+
+/* ---------- GitHub button inside the project badge row ---------- */
 .proj-card .proj-link{
-  font-family:var(--font-mono); font-size:12.5px; letter-spacing:.03em;
-  padding:9px 16px; border-radius:999px;
+  font-family:var(--font-mono); font-size:14px; letter-spacing:.02em;
+  padding:5px 12px; border-radius:999px;
   border:1px solid var(--line-strong); color:var(--text);
-  display:inline-flex; align-items:center; gap:8px;
+  display:inline-flex; align-items:center; gap:7px;
   transition:transform .25s ease, border-color .25s ease, color .25s ease;
 }
 .proj-card .proj-link:hover{ transform:translateY(-2px); border-color:var(--accent); color:var(--accent); }
 .proj-card .proj-link svg{ width:15px; height:15px; stroke:currentColor; fill:none; }
-.proj-card .proj-link-note{ font-family:var(--font-mono); font-size:11px; color:var(--text-muted); }
 
-/* ---------- Medium icon in the nav ---------- */
-.icon-link .medium-mark{ fill:var(--text); stroke:none; }
+/* ---------- Spacing tweaks ---------- */
+/* a bit more room between a "My role" note and the tech tags under it */
+html body .proj-card .role-note + .proj-tags{ margin-top:20px; }
+
+/* Skills: shrink the animated bars so there isn't a big empty gap
+   between each column title and its list */
+html body .skill-col h4{ margin-bottom:6px; }
+html body .skill-col .eq{ height:14px; margin-bottom:8px; }

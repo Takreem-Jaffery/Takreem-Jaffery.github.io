@@ -10,7 +10,7 @@
 
   const CHARS = 'XxOo+=-:.#*<>/\\'.split('');
   const CELL = 34;
-  const FONT = "IBM Plex Mono, monospace";
+  const FONT = "Inter, sans-serif";
 
   let dpr = Math.min(window.devicePixelRatio || 1, 2);
   let W = 0, H = 0;
@@ -97,6 +97,11 @@
   // ---------- init ----------
   readColors();
   buildAmbientGrid();
+
+  // Redraw once the web font has actually loaded so the first paint isn't a fallback font.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(drawAmbient);
+  }
 
   if (!reduceMotion){
     setInterval(flickerAmbient, 220);

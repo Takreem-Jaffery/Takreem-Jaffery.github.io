@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Apply the saved theme before the page first paints (prevents a light-mode flash in dark mode) -->
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('tj-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<style>html[data-theme="dark"]{background:#15130F}</style>
 <title>Takreem Jaffery — Software Engineer | AI, Full-Stack &amp; Mobile</title>
 <meta name="description" content="Takreem Jaffery is a Software Engineer in the San Francisco Bay Area building AI-powered products across web, mobile, and cloud. Explore projects, experience, and writing.">
 <meta name="author" content="Takreem Jaffery">
@@ -81,8 +91,8 @@
       <a class="icon-link" href="https://github.com/Takreem-Jaffery" target="_blank" rel="noopener" aria-label="GitHub profile">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text)"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
       </a>
-      <a class="icon-link" href="https://medium.com/@takreem.jaffery" target="_blank" rel="noopener me" aria-label="Medium profile">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse class="medium-mark" cx="6.5" cy="12" rx="4.5" ry="5.5"/><ellipse class="medium-mark" cx="15" cy="12" rx="2.5" ry="5.5"/><rect class="medium-mark" x="20.2" y="6.5" width="1.8" height="11" rx=".9"/></svg>
+      <a class="icon-link" href="https://www.linkedin.com/in/takreem-jaffery" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
       </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg>
@@ -246,6 +256,10 @@
           <div class="proj-badges">
             <span class="stat-badge">97.9% accuracy</span>
             <span class="stat-badge">100% precision</span>
+            <a class="proj-link" href="https://github.com/Takreem-Jaffery/Hybrid-AI-Spam-and-Misinformation-Detection" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              View on GitHub
+            </a>
           </div>
           <p>Reviewed 25+ research papers on misinformation detection,
             NLP, transformers, and cybersecurity to design a hybrid spam
@@ -258,14 +272,6 @@
 
           <div class="proj-tags">
             <span class="tag-pill">Random Forest</span><span class="tag-pill">DistilBERT</span><span class="tag-pill">TF-IDF</span>
-          </div>
-
-          <div class="proj-links">
-            <a class="proj-link" href="https://github.com/Takreem-Jaffery/Hybrid-AI-Spam-and-Misinformation-Detection" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-              View on GitHub
-            </a>
-            <span class="proj-link-note">work in progress</span>
           </div>
 
           <!-- ▼ carousel — optional -->

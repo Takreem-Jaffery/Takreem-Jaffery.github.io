@@ -153,6 +153,12 @@ export function createHeroScene(canvas) {
   }
   updateColors();
 
+  // Redraw the labels once the web font has actually loaded so they don't
+  // stay stuck in a fallback font.
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load('600 136px "IBM Plex Mono"').then(updateColors).catch(() => {});
+  }
+
   function onResize() {
     const w = container.clientWidth;
     const h = container.clientHeight;
