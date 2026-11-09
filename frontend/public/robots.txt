@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://takreem-jaffery.github.io/sitemap.xml

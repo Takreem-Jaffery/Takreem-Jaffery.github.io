@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "optimize-images": "node scripts/optimize-images.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "sharp": "^0.33.5",
     "vite": "^5.4.11"
   }
 }

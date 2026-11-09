@@ -1,0 +1,26 @@
+/* Additions on top of style.css. Selectors are slightly more specific than
+   the originals on purpose so they win regardless of stylesheet order. */
+
+/* ---------- Logo: "TJ / engineer" collapses to "TJ" on narrower widths ---------- */
+header .logo{ white-space:nowrap; flex-shrink:0; }
+
+@media (max-width:900px){
+  header .logo .logo-sub{ display:none; }
+  header nav .navlinks{ gap:18px; }
+}
+
+/* ---------- Project link buttons ---------- */
+.proj-card .proj-links{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:16px; }
+.proj-card .proj-link{
+  font-family:var(--font-mono); font-size:12.5px; letter-spacing:.03em;
+  padding:9px 16px; border-radius:999px;
+  border:1px solid var(--line-strong); color:var(--text);
+  display:inline-flex; align-items:center; gap:8px;
+  transition:transform .25s ease, border-color .25s ease, color .25s ease;
+}
+.proj-card .proj-link:hover{ transform:translateY(-2px); border-color:var(--accent); color:var(--accent); }
+.proj-card .proj-link svg{ width:15px; height:15px; stroke:currentColor; fill:none; }
+.proj-card .proj-link-note{ font-family:var(--font-mono); font-size:11px; color:var(--text-muted); }
+
+/* ---------- Medium icon in the nav ---------- */
+.icon-link .medium-mark{ fill:var(--text); stroke:none; }

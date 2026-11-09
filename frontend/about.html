@@ -4,22 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Takreem Jaffery</title>
-<meta name="description" content="A bit more about Takreem Jaffery — hobbies, interests, and achievements beyond the resume.">
+<meta name="description" content="A bit more about Takreem Jaffery, a Software Engineer: hobbies, interests, and milestones beyond the resume.">
+<meta name="author" content="Takreem Jaffery">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://takreem-jaffery.github.io/about.html">
+<meta name="theme-color" content="#E8E9E1">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Social previews -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Takreem Jaffery">
+<meta property="og:title" content="About — Takreem Jaffery">
+<meta property="og:description" content="Hobbies, interests, and milestones beyond the resume.">
+<meta property="og:url" content="https://takreem-jaffery.github.io/about.html">
+<meta property="og:image" content="https://takreem-jaffery.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Takreem Jaffery">
+<meta name="twitter:description" content="Hobbies, interests, and milestones beyond the resume.">
+<meta name="twitter:image" content="https://takreem-jaffery.github.io/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/src/style.css">
-</head>
 <script type="module" src="/src/ascii-bg.js"></script>
 <script type="module" src="/src/main.js"></script>
 <script type="module" src="/src/lightbox.js"></script>
+<script type="module" src="/src/extras.js"></script>
+</head>
 <body>
 
 <canvas id="asciiAmbient" class="ascii-layer" aria-hidden="true"></canvas>
 
 <header>
   <nav>
-    <a href="/"><div class="logo"><span class="dot"></span>TJ<span class="logo-sub">&nbsp;/ engineer</span></div></a>
+    <a href="/" aria-label="Takreem Jaffery — home"><div class="logo"><span class="dot"></span>TJ<span class="logo-sub">&nbsp;/ engineer</span></div></a>
     <div class="navlinks">
       <a href="/#experience">Experience</a>
       <a href="/#projects">Projects</a>
@@ -32,6 +56,9 @@
     <div class="nav-actions">
       <a class="icon-link" href="https://github.com/Takreem-Jaffery" target="_blank" rel="noopener" aria-label="GitHub profile">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text)"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a>
+      <a class="icon-link" href="https://medium.com/@takreem.jaffery" target="_blank" rel="noopener me" aria-label="Medium profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse class="medium-mark" cx="6.5" cy="12" rx="4.5" ry="5.5"/><ellipse class="medium-mark" cx="15" cy="12" rx="2.5" ry="5.5"/><rect class="medium-mark" x="20.2" y="6.5" width="1.8" height="11" rx=".9"/></svg>
       </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg>
@@ -50,62 +77,64 @@
     </div>
   </section>
 
-  <!-- HOBBY COLLAGE -->
+  <!-- HOBBY COLLAGE
+       Photos below the fold use loading="lazy" so they only download when
+       scrolled into view. Run `npm run optimize-images` to also shrink them. -->
   <section class="section-pad tight">
     <div class="wrap">
       <div class="section-head reveal"><span class="tag">01</span><h2>Outside of work</h2></div>
 
       <div class="collage reveal">
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-1.JPG" alt="Sketch/painting work">
+          <img src="./src/assets/fun/more-1.webp" alt="Sketch/painting work" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-2.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-2.webp" alt="Hobby photo" decoding="async">
         </figure>
         <figure class="b-tall">
-          <img src="./src/assets/fun/more-4.JPG" alt="Hobby photo">
+          <img src="./src/assets/fun/more-4.webp" alt="Hobby photo" decoding="async">
         </figure>
         <figure>
-          <img src="./src/assets/fun/more-6.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-6.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-7.jpeg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-7.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure>
-          <img src="./src/assets/fun/more-8.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-8.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="b-tall">
-          <img src="./src/assets/fun/more-12.JPG" alt="Hobby photo">
+          <img src="./src/assets/fun/more-12.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="b-tall">
-          <img src="./src/assets/fun/more-10.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-10.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-13.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-13.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-16.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-16.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-17.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-17.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-20.jpeg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-20.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure>
-          <img src="./src/assets/fun/more-23.jpeg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-23.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="b-tall b-wide">
-          <img src="./src/assets/fun/more-21.jpeg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-21.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="b-tall">
-          <img src="./src/assets/fun/more-18.PNG" alt="Hobby photo">
+          <img src="./src/assets/fun/more-18.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="c-tall">
-          <img src="./src/assets/fun/more-19.jpg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-19.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
         <figure class="b-tall">
-          <img src="./src/assets/fun/more-22.jpeg" alt="Hobby photo">
+          <img src="./src/assets/fun/more-22.webp" alt="Hobby photo" loading="lazy" decoding="async">
         </figure>
 
       </div>
@@ -171,9 +200,13 @@
         <p>Head back to the main portfolio for experience, projects, and skills.</p>
         <div class="contact-links">
           <a class="clink" href="/#experience">← Back to portfolio</a>
-          <a class="clink" href="mailto:takreem.jaffery@gmail.com">
+          <a class="clink" href="mailto:takreem.jaffery@gmail.com?subject=Hello%20from%20your%20portfolio">
             <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-width="1.5"/><path d="M4 6l8 7 8-7" stroke-width="1.5"/></svg>
             Say hello
+          </a>
+          <a class="clink" href="https://medium.com/@takreem.jaffery" target="_blank" rel="noopener me">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="6.5" cy="12" rx="4.5" ry="5.5" stroke-width="1.5"/><ellipse cx="15" cy="12" rx="2.5" ry="5.5" stroke-width="1.5"/><path d="M21 6.5v11" stroke-width="1.5"/></svg>
+            Read my writing
           </a>
         </div>
       </div>
